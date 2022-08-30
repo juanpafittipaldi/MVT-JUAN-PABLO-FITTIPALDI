@@ -13,6 +13,14 @@ def familiares(request):
     familiar_2.save()
     familiar_3.save()
     diccionario={"PrimerFamiliar":familiar_1, "SegundoFamiliar":familiar_2,"TercerFamiliar":familiar_3}
-    plantilla=loader.get_template("PlantillaDatosFlia.html")
+    plantilla=loader.get_template("PlantillaCargaFlia.html")
     documento=plantilla.render(diccionario)
+    
+    return HttpResponse(documento)
+
+def mostrar_familiares(request):
+    listaDeFamilia = familiar.objects.all()
+    diccionario = {"listaDeFamilia":listaDeFamilia}
+    plantilla=loader.get_template("PlantillaDatosFlia.html")
+    documento= plantilla.render(diccionario)
     return HttpResponse(documento)
