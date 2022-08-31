@@ -7,40 +7,19 @@
     <title>Datos familiares</title>
 </head>
 <body>
-    {{ listaDeFamilia }}
-    <h1>Familiar</h1>
-    <h2 style="color:blue">Primer Familiar Cargado</h2>
+    <h1>Familiares cargados:</h1>
+    {% for familiar in listaDeFamilia %}
+    <h2 style="color:blue">{{ familiar.id }}° Familiar Cargado</h2>
     <h3>Nombre</h3>
-    {{ PrimerFamiliar.nombre }}
+    {{ familiar.nombre }}
     <h3>Apellido</h3>
-    {{ PrimerFamiliar.apellido }}
+    {{ familiar.apellido }}
     <h3>Edad</h3>
-    {{ PrimerFamiliar.edad }}
+    {{ familiar.edad }}
     <h3>Fecha de nacimiento</h3>
-    {{ PrimerFamiliar.fecha_nacimiento }}
-    <br>
+    {{ familiar.fecha_nacimiento }}
+    {% endfor %}
 
-    <h2 style="color:blue">Segundo Familiar Cargado</h2>
-    <h3>Nombre</h3>
-    {{ SegundoFamiliar.nombre }}
-    <h3>Apellido</h3>
-    {{ SegundoFamiliar.apellido }}
-    <h3>Edad</h3>
-    {{ SegundoFamiliar.edad }}
-    <h3>Fecha de nacimiento</h3>
-    {{ SegundoFamiliar.fecha_nacimiento }}
-   <br>
-   
-   
-    <h2 style="color:blue">Tercer Familiar Cargado</h2>
-    <h3>Nombre</h3>
-    {{ TercerFamiliar.nombre }}
-    <h3>Apellido</h3>
-    {{ TercerFamiliar.apellido }}
-    <h3>Edad</h3>
-    {{ TercerFamiliar.edad }}
-    <h3>Fecha de nacimiento</h3>
-    {{ TercerFamiliar.fecha_nacimiento }}
 
 </body>
 </html>
